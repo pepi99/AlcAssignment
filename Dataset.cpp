@@ -42,7 +42,7 @@ double Dataset::getMedian() {
         return this->ds[n];
     } else { // if even number of elements:
         // return the middle two elements
-        std::nth_element(this->ds.begin(), this->ds.begin() + n, this->ds.end());
+        std::nth_element(this->ds.begin(), this->ds.begin() + n - 1, this->ds.end());
         return (this->ds[n - 1] + this->ds[n]) / 2;
     }
 }
