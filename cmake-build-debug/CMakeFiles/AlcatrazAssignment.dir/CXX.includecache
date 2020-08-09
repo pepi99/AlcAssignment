@@ -6,13 +6,15 @@
 
 #IncludeRegexTransform: 
 
+/home/petar/Documents/CppProjects/AlcatrazAssignment/Dataset.cpp
+Dataset.h
+/home/petar/Documents/CppProjects/AlcatrazAssignment/Dataset.h
+algorithm
+-
+iostream
+-
+
 /home/petar/Documents/CppProjects/AlcatrazAssignment/Dataset.h
 vector
 -
-
-/home/petar/Documents/CppProjects/AlcatrazAssignment/main.cpp
-iostream
--
-Dataset.h
-/home/petar/Documents/CppProjects/AlcatrazAssignment/Dataset.h
 
