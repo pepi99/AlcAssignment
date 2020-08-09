@@ -25,9 +25,19 @@ public:
 
     std::vector<double> getDataset();
 
+    void setFastAdd(bool fastAdd);
 
 private:
+    double getMedianFast(int size);
+
+    double getMedianBinarySearch(int size);
+
+    void binaryAddNumber(double n); // O(log n) complexity
+
+    void fastAddNumber(double n);
+
     std::vector<double> ds; // use vector to store data
+    bool fastAdd; // add numbers to the sample in O(1), but get median in O(log n)
 };
 
 

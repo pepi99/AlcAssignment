@@ -1,17 +1,14 @@
 Complexity analysis
 
-Dataset::addNumber method has O(1) time complexity, because there is
-sorting or any expensive operation, an element is just pushed back in
-stack-like fashion.
+This solution has a parameter "fastAdd", which can be set with the setter setFastAdd(boolean).
+If it is set to true, each next number added will be just appended at the end of the data structure.
+Calling addNumber(number) would take O(1) time, but retrieving the method in an unsorted list would then
+take O(log n) time.
 
-Dataset::getMedian has O(N*logN) worst time complexity (O(2*N*logN), to be exact).
-This is because the method nth_element has O(N*logN) worst time complexity and
-is called twice. It has, however, O(N) expected running time. It does not
-sort the whole list, just puts and element at its correct position in the list.
+If "fastAdd" is false (its default value), addNumber(number) will take O(log n) time and will add each
+number at a position such that after the number is added, the list is sorted. Retrieving the median then
+takes O(1) time, because we can just return the middle element of the list (or the average of the middle two,
+if the number of elements is even).
 
-The solution I have implemented is appropriate if addNumber is called more often
-and getMedian is called more rarely. If getMedian is called more often than addNumber
-(which makes no sense), then it would be appropriate to use binary search each time we
-call addNumber (and directly add it into its correct position in O(logN)). Then, when
-we call getMedian, it can be done in O(1) because it will be called on sorted list and is
-trivial to implement.
+It is up to the user of the program to choose what value to use for "fastAdd", depending on which of the two
+methods will be called more often.
